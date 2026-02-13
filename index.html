@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    
+    
+  <meta property="og:type" content="website">
+<meta property="og:url" content="https://zerocastor.com/">
+<meta property="og:title" content="Zerocastor | Sri Lanka Premium Live TV Platform">
+<meta property="og:description" content="Stream your favorite Sri Lankan Live TV channels in high quality. Zero buffering, premium experience.">
+<meta property="og:image" content="https://zerocastor.com/assets/meta.jpg">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://zerocastor.com/">
+<meta property="twitter:title" content="Zerocastor | Sri Lanka Premium Live TV Platform">
+<meta property="twitter:description" content="Stream your favorite Sri Lankan Live TV channels in high quality. Zero buffering, premium experience.">
+<meta property="twitter:image" content="https://zerocastor.com/assets/meta.jpg">
+    
+    <title>Zerocastor | Sri Lanka Premium Live TV Platform - Watch Sinhala Channels Online</title>
+    
+    
+    <meta name="description" content="Watch high-quality Sri Lankan Live TV channels on Zerocastor. Stream Derana, Sirasa, Hiru, and more with zero buffering. The best premium TV platform in Sri Lanka.">
+<meta name="keywords" content="Zerocastor, Sri Lanka Live TV, Sinhala TV Online, Watch Derana Live, Sirasa TV Online, Hiru TV Stream, Sri Lanka IPTV, Live News Sri Lanka, sinhala tv free, data free tv, Dialog Free tv, watch icc t20 2026">
+
+
+    <link rel="icon" type="image/png" href="https://zerocastor.com/assets/fav.png">
+    
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #000000;
+            --surface: #0a0a0a;
+            --accent: #007AFF; 
+            --accent-glow: rgba(0, 122, 255, 0.4);
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --sidebar-w: 280px;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none; }
+        html { scroll-behavior: smooth; }
+        body { 
+            margin: 0; background: var(--bg); color: var(--text-main); 
+            font-family: 'Outfit', sans-serif; overflow-x: hidden;
+            padding-bottom: 100px;
+        }
+
+        /* --- Desktop Sidebar Rail --- */
+        .sidebar-rail {
+            display: none;
+            position: fixed; left: 0; top: 0; bottom: 0; width: var(--sidebar-w);
+            background: #050505; border-right: 1px solid rgba(255,255,255,0.05);
+            z-index: 1000; padding: 40px 20px;
+        }
+        
+        /* Centered Logo & Brand Name */
+        .rail-brand { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 50px; 
+            text-align: center;
+        }
+        .rail-brand img { 
+            height: 75px; 
+            width: auto; 
+            filter: drop-shadow(0 0 12px rgba(0, 122, 255, 0.3));
+            margin-bottom: 12px;
+        }
+        .brand-name {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .brand-name span { color: var(--accent); }
+        
+        .rail-nav { display: flex; flex-direction: column; gap: 8px; }
+        .rail-link {
+            padding: 14px 18px; border-radius: 16px; color: var(--text-dim);
+            text-decoration: none; font-weight: 600; font-size: 15px;
+            display: flex; align-items: center; gap: 15px; transition: 0.3s ease;
+        }
+        .rail-link i { font-size: 20px; }
+        .rail-link:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .rail-link.active { background: var(--accent) !important; color: #fff !important; box-shadow: 0 10px 20px var(--accent-glow); }
+
+        /* --- Professional Header --- */
+        header { 
+            position: sticky; top: 0; z-index: 900; 
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(30px); 
+            padding: 18px 20px; display: flex; align-items: center; gap: 20px; 
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .header-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .header-logo img { height: 35px; width: auto; }
+        .header-logo h1 { 
+            color: #fff; font-size: 20px; font-weight: 800; margin: 0; 
+            text-transform: uppercase; letter-spacing: -0.5px;
+        }
+
+        .search-bar { 
+            flex: 1; display: flex; align-items: center; gap: 12px; 
+            background: rgba(255,255,255,0.08); padding: 10px 18px; 
+            border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); 
+        }
+        .search-bar i { color: var(--accent); }
+        .search-bar input { background: transparent; border: none; color: #fff; width: 100%; font-size: 15px; }
+
+        /* --- Slider --- */
+        .hero-slider { position: relative; width: 100%; height: 230px; padding: 10px 15px; margin-bottom: 20px; }
+        .slider-inner { width: 100%; height: 100%; border-radius: 28px; overflow: hidden; position: relative; }
+        .slider-track { display: flex; height: 100%; transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1); }
+        .slide { min-width: 100%; height: 100%; position: relative; cursor: pointer; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+        .slide-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,1) 0%, transparent 70%); }
+        .slide-content { position: absolute; bottom: 25px; left: 25px; z-index: 5; }
+        .featured-tag { background: var(--accent); color: #fff; padding: 5px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; display: inline-flex; align-items: center; gap: 6px; }
+        .slide-title { font-size: 26px; font-weight: 800; margin: 0; }
+
+        /* --- Grid --- */
+        .cat-section { padding-top: 30px; scroll-margin-top: 110px; }
+        .cat-title { padding: 0 20px 18px; font-size: 22px; font-weight: 800; color: #fff; }
+        .app-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; padding: 0 15px 50px; }
+        .channel-card { text-decoration: none; color: inherit; text-align: center; }
+        .icon-box { 
+            aspect-ratio: 1/1; background: #000; border-radius: 24px; 
+            border: 1px solid rgba(255,255,255,0.1); display: flex; 
+            align-items: center; justify-content: center; padding: 18%; 
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        }
+        .channel-card img { width: 100%; height: 100%; object-fit: contain; }
+        .channel-card span { display: block; margin-top: 10px; font-size: 12px; font-weight: 600; color: var(--text-dim); }
+
+        /* --- Mobile Nav --- */
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; right: 0; height: 80px;
+            background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(25px);
+            display: flex; justify-content: space-around; align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.05); z-index: 1000;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .nav-item { color: var(--text-dim); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1; }
+        .nav-item i { font-size: 22px; }
+        .nav-item span { font-size: 11px; font-weight: 700; }
+        .nav-item.active { color: var(--accent); }
+
+        @media (min-width: 1024px) {
+            .sidebar-rail { display: block; }
+            .bottom-nav, .header-logo { display: none; }
+            .main-view { margin-left: var(--sidebar-w); }
+            header { padding: 30px 40px; background: transparent; backdrop-filter: none; border: none; }
+            .hero-slider { height: 450px; padding: 20px 40px; }
+            .slide-title { font-size: 48px; }
+            .app-grid { grid-template-columns: repeat(7, 1fr); padding: 0 40px 80px; gap: 25px; }
+            .cat-title { padding: 0 40px 25px; font-size: 30px; }
+            .icon-box:hover { transform: translateY(-10px) scale(1.05); border-color: var(--accent); box-shadow: 0 15px 35px var(--accent-glow); }
+        }
+    </style>
+</head>
+<body id="home">
+
+    <aside class="sidebar-rail">
+        <div class="rail-brand">
+            <img src="https://zerocastor.com/assets/newlogo.png" alt="Zerocast Logo">
+            
+        </div>
+        
+        <nav class="rail-nav">
+            <a href="#home" class="rail-link active" data-nav="home">
+                <i class="bi bi-house-door-fill"></i> Home
+            </a>
+                        <a href="#cat-1" class="rail-link" data-nav="cat-1">
+                <i class="bi bi-play-circle-fill"></i> Local            </a>
+                        <a href="#cat-2" class="rail-link" data-nav="cat-2">
+                <i class="bi bi-play-circle-fill"></i> News            </a>
+                        <a href="#cat-3" class="rail-link" data-nav="cat-3">
+                <i class="bi bi-play-circle-fill"></i> Sports            </a>
+                        <a href="#cat-4" class="rail-link" data-nav="cat-4">
+                <i class="bi bi-play-circle-fill"></i> Entertainment            </a>
+                        <a href="#cat-5" class="rail-link" data-nav="cat-5">
+                <i class="bi bi-play-circle-fill"></i> Kids            </a>
+                        <a href="#cat-6" class="rail-link" data-nav="cat-6">
+                <i class="bi bi-play-circle-fill"></i> Documentary            </a>
+                        <a href="#cat-7" class="rail-link" data-nav="cat-7">
+                <i class="bi bi-play-circle-fill"></i> Religious            </a>
+                        <a href="#cat-8" class="rail-link" data-nav="cat-8">
+                <i class="bi bi-play-circle-fill"></i> Music            </a>
+                        <a href="#cat-9" class="rail-link" data-nav="cat-9">
+                <i class="bi bi-play-circle-fill"></i> Education            </a>
+                        <a href="#cat-10" class="rail-link" data-nav="cat-10">
+                <i class="bi bi-play-circle-fill"></i> International            </a>
+                        <a href="#cat-11" class="rail-link" data-nav="cat-11">
+                <i class="bi bi-play-circle-fill"></i> HD Channels            </a>
+                    </nav>
+    </aside>
+
+    <div class="main-view">
+        <header>
+            <a href="#" class="header-logo">
+                <img src="https://zerocastor.com/assets/newlogo.png" alt="Logo">
+           
+            </a>
+            <div class="search-bar">
+                <i class="bi bi-search"></i>
+                <input type="text" id="q" placeholder="Search Zerocast TV..." onkeyup="search()">
+            </div>
+        </header>
+
+        <div class="hero-slider">
+            <div class="slider-inner">
+                <div class="slider-track" id="track">
+                                        <div class="slide" onclick="location.href='player.php?id=62'">
+                        <img src="https://images.icc-cricket.com/image/upload/t_ratio21_9-size50-webp/v1765453641/prd/ozmjpk90kaviqgyju9nl" alt="">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <span class="featured-tag"><i class="bi bi-patch-check-fill"></i> Zerocast Featured</span>
+                            <h3 class="slide-title">ICC T20 2026 </h3>
+                        </div>
+                    </div>
+                                        <div class="slide" onclick="location.href='player.php?id=8'">
+                        <img src="https://sirasatv.lk/imageUploads/dramas/RockycoverImage-Rocky_new1.jpg" alt="">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <span class="featured-tag"><i class="bi bi-patch-check-fill"></i> Zerocast Featured</span>
+                            <h3 class="slide-title">Roki</h3>
+                        </div>
+                    </div>
+                                        <div class="slide" onclick="location.href='player.php?id=11'">
+                        <img src="https://www.hirutv.lk//images/hiru%20kumaru%20adare%20genalla.jpg" alt="">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <span class="featured-tag"><i class="bi bi-patch-check-fill"></i> Zerocast Featured</span>
+                            <h3 class="slide-title">Hiru Kumaru Adare Genalla</h3>
+                        </div>
+                    </div>
+                                        <div class="slide" onclick="location.href='player.php?id=11'">
+                        <img src="https://scontent-sin2-1.xx.fbcdn.net/v/t39.30808-6/577964624_1150466587206627_1827711788309413482_n.jpg?stp=dst-jpg_s960x960_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=cc71e4&amp;_nc_ohc=MyAYIzFsJcAQ7kNvwFbq8gR&amp;_nc_oc=AdnY-sfmWb6evBNHNZSngESLPlqELJjMXApA6difmMdGNQU7IIZ6okaRwVu_DgQxFkOVf1LPmzsRpZk5PBCOtsma&amp;_nc_zt=23&amp;_nc_ht=scontent-sin2-1.xx&amp;_nc_gid=mfheoQb3GzRFEv-KzTkhRQ&amp;oh=00_AfswpopVgzyogELv8SFXNd7iUvurZ_e_DB4bmSWxF87XzA&amp;oe=698FD76B" alt="">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <span class="featured-tag"><i class="bi bi-patch-check-fill"></i> Zerocast Featured</span>
+                            <h3 class="slide-title">Hiru TV Drama</h3>
+                        </div>
+                    </div>
+                                        <div class="slide" onclick="location.href='player.php?id=8'">
+                        <img src="https://sirasatv.lk/imageUploads/dramas/AalawanthicoverImage-AALAWANTHI%201600C778%20WEB.jpg" alt="">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <span class="featured-tag"><i class="bi bi-patch-check-fill"></i> Zerocast Featured</span>
+                            <h3 class="slide-title">Alawanthi</h3>
+                        </div>
+                    </div>
+                                    </div>
+            </div>
+        </div>
+
+        <div id="wrapper">
+                                            <section class="cat-section" id="cat-1">
+                    <div class="cat-title">Local</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=13" class="channel-card" data-search="art television">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25672?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>ART Television</span>
+                        </a>
+                                                <a href="player.php?id=1" class="channel-card" data-search="channel one">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25660?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Channel One</span>
+                        </a>
+                                                <a href="player.php?id=16" class="channel-card" data-search="haritha tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25675?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Haritha TV</span>
+                        </a>
+                                                <a href="player.php?id=11" class="channel-card" data-search="hiru tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25670?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Hiru TV</span>
+                        </a>
+                                                <a href="player.php?id=4" class="channel-card" data-search="itn">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25663?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>ITN</span>
+                        </a>
+                                                <a href="player.php?id=25" class="channel-card" data-search="jaya tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25684?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Jaya TV</span>
+                        </a>
+                                                <a href="player.php?id=3" class="channel-card" data-search="nethra tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25662?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Nethra TV</span>
+                        </a>
+                                                <a href="player.php?id=21" class="channel-card" data-search="rangiri sri lanka">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25680?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Rangiri Sri Lanka</span>
+                        </a>
+                                                <a href="player.php?id=18" class="channel-card" data-search="ridee tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25677?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Ridee TV</span>
+                        </a>
+                                                <a href="player.php?id=2" class="channel-card" data-search="rupavahini">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25661?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Rupavahini</span>
+                        </a>
+                                                <a href="player.php?id=9" class="channel-card" data-search="shakthi tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25668?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Shakthi TV</span>
+                        </a>
+                                                <a href="player.php?id=8" class="channel-card" data-search="sirasa tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25667?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Sirasa TV</span>
+                        </a>
+                                                <a href="player.php?id=15" class="channel-card" data-search="siyatha tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25674?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Siyatha TV</span>
+                        </a>
+                                                <a href="player.php?id=7" class="channel-card" data-search="swarnavahini">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25666?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Swarnavahini</span>
+                        </a>
+                                                <a href="player.php?id=10" class="channel-card" data-search="tv 1">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25669?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>TV 1</span>
+                        </a>
+                                                <a href="player.php?id=6" class="channel-card" data-search="tv derana">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25665?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>TV Derana</span>
+                        </a>
+                                                <a href="player.php?id=17" class="channel-card" data-search="tv didula">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25676?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>TV Didula</span>
+                        </a>
+                                                <a href="player.php?id=12" class="channel-card" data-search="tv supreme">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25679?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>TV Supreme</span>
+                        </a>
+                                                <a href="player.php?id=5" class="channel-card" data-search="vasantham tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25664?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Vasantham TV</span>
+                        </a>
+                                            </div>
+                </section>
+                                            <section class="cat-section" id="cat-2">
+                    <div class="cat-title">News</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=14" class="channel-card" data-search="ada derana 24">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25673?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Ada Derana 24</span>
+                        </a>
+                                                <a href="player.php?id=30" class="channel-card" data-search="al jazeera">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25689?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Al Jazeera</span>
+                        </a>
+                                                <a href="player.php?id=32" class="channel-card" data-search="bbc world">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25691?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>BBC World</span>
+                        </a>
+                                                <a href="player.php?id=38" class="channel-card" data-search="bloomberg">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25698?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Bloomberg</span>
+                        </a>
+                                                <a href="player.php?id=33" class="channel-card" data-search="cgtn">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25692?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>CGTN</span>
+                        </a>
+                                                <a href="player.php?id=39" class="channel-card" data-search="cnbc">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25699?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>CNBC</span>
+                        </a>
+                                                <a href="player.php?id=34" class="channel-card" data-search="cnn">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25693?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>CNN</span>
+                        </a>
+                                                <a href="player.php?id=37" class="channel-card" data-search="euro news">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25696?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Euro News</span>
+                        </a>
+                                                <a href="player.php?id=36" class="channel-card" data-search="france 24">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25695?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>France 24</span>
+                        </a>
+                                                <a href="player.php?id=35" class="channel-card" data-search="ndtv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25694?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>NDTV</span>
+                        </a>
+                                            </div>
+                </section>
+                                            <section class="cat-section" id="cat-3">
+                    <div class="cat-title">Sports</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=67" class="channel-card" data-search="eurosport">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25727?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Eurosport</span>
+                        </a>
+                                                <a href="player.php?id=64" class="channel-card" data-search="sony sports 1">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25724?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Sony Sports 1</span>
+                        </a>
+                                                <a href="player.php?id=66" class="channel-card" data-search="sony sports 2">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25726?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Sony Sports 2</span>
+                        </a>
+                                                <a href="player.php?id=68" class="channel-card" data-search="star sports 1">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25728?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Sports 1</span>
+                        </a>
+                                                <a href="player.php?id=69" class="channel-card" data-search="star sports 2">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25729?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Sports 2</span>
+                        </a>
+                                                <a href="player.php?id=65" class="channel-card" data-search="ten cricket">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25725?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Ten Cricket</span>
+                        </a>
+                                                <a href="player.php?id=62" class="channel-card" data-search="the papare tv 1">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/130717?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>The Papare TV 1</span>
+                        </a>
+                                                <a href="player.php?id=63" class="channel-card" data-search="the papare tv 2">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/130719?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>The Papare TV 2</span>
+                        </a>
+                                            </div>
+                </section>
+                                            <section class="cat-section" id="cat-4">
+                    <div class="cat-title">Entertainment</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=72" class="channel-card" data-search="&flix">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25732?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>&amp;flix</span>
+                        </a>
+                                                <a href="player.php?id=78" class="channel-card" data-search="axn">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25737?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>AXN</span>
+                        </a>
+                                                <a href="player.php?id=90" class="channel-card" data-search="b4u movies">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25749?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>B4U Movies</span>
+                        </a>
+                                                <a href="player.php?id=42" class="channel-card" data-search="channel c">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25702?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Channel C</span>
+                        </a>
+                                                <a href="player.php?id=88" class="channel-card" data-search="colors">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25747?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Colors</span>
+                        </a>
+                                                <a href="player.php?id=79" class="channel-card" data-search="colors cineplex">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/71893?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Colors Cineplex</span>
+                        </a>
+                                                <a href="player.php?id=93" class="channel-card" data-search="colors tamil">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25752?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Colors Tamil</span>
+                        </a>
+                                                <a href="player.php?id=81" class="channel-card" data-search="disney international">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/174286?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Disney International</span>
+                        </a>
+                                                <a href="player.php?id=80" class="channel-card" data-search="fashion tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25739?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Fashion TV</span>
+                        </a>
+                                                <a href="player.php?id=108" class="channel-card" data-search="food network">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25714?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Food Network</span>
+                        </a>
+                                                <a href="player.php?id=71" class="channel-card" data-search="hbo family">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25731?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>HBO Family</span>
+                        </a>
+                                                <a href="player.php?id=70" class="channel-card" data-search="hbo signature">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25730?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>HBO Signature</span>
+                        </a>
+                                                <a href="player.php?id=107" class="channel-card" data-search="hgtv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25722?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>HGTV</span>
+                        </a>
+                                                <a href="player.php?id=22" class="channel-card" data-search="hi tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25681?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Hi TV</span>
+                        </a>
+                                                <a href="player.php?id=75" class="channel-card" data-search="hits">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25734?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>HITS</span>
+                        </a>
+                                                <a href="player.php?id=73" class="channel-card" data-search="hits movies">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25733?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>HITS MOVIES</span>
+                        </a>
+                                                <a href="player.php?id=43" class="channel-card" data-search="jaya max">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/185457?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Jaya Max</span>
+                        </a>
+                                                <a href="player.php?id=95" class="channel-card" data-search="jaya movies">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/185459?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Jaya Movies</span>
+                        </a>
+                                                <a href="player.php?id=100" class="channel-card" data-search="jaya plus">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/185452?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Jaya Plus</span>
+                        </a>
+                                                <a href="player.php?id=97" class="channel-card" data-search="kalaignar tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25756?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Kalaignar TV</span>
+                        </a>
+                                                <a href="player.php?id=86" class="channel-card" data-search="set max">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25745?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>SET Max</span>
+                        </a>
+                                                <a href="player.php?id=99" class="channel-card" data-search="sirippoli tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25795?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Sirippoli TV</span>
+                        </a>
+                                                <a href="player.php?id=74" class="channel-card" data-search="sony pix">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25708?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Sony PIX</span>
+                        </a>
+                                                <a href="player.php?id=85" class="channel-card" data-search="sony set">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25744?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Sony SET</span>
+                        </a>
+                                                <a href="player.php?id=84" class="channel-card" data-search="star bharath">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25743?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Bharath</span>
+                        </a>
+                                                <a href="player.php?id=87" class="channel-card" data-search="star gold">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25746?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Gold</span>
+                        </a>
+                                                <a href="player.php?id=91" class="channel-card" data-search="star gold romance">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25750?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Gold Romance</span>
+                        </a>
+                                                <a href="player.php?id=89" class="channel-card" data-search="star plus">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25748?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Plus</span>
+                        </a>
+                                                <a href="player.php?id=96" class="channel-card" data-search="star vijay">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25755?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Vijay</span>
+                        </a>
+                                                <a href="player.php?id=94" class="channel-card" data-search="sun tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25753?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Sun TV</span>
+                        </a>
+                                                <a href="player.php?id=77" class="channel-card" data-search="warner tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25736?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Warner TV</span>
+                        </a>
+                                                <a href="player.php?id=76" class="channel-card" data-search="zee cafe">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25735?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Zee Cafe</span>
+                        </a>
+                                                <a href="player.php?id=92" class="channel-card" data-search="zee cinema">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25751?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Zee Cinema</span>
+                        </a>
+                                                <a href="player.php?id=98" class="channel-card" data-search="zee tamil">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25757?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Zee Tamil</span>
+                        </a>
+                                                <a href="player.php?id=101" class="channel-card" data-search="zee thirai">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/188921?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Zee Thirai</span>
+                        </a>
+                                                <a href="player.php?id=44" class="channel-card" data-search="zing tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25704?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Zing TV</span>
+                        </a>
+                                            </div>
+                </section>
+                                            <section class="cat-section" id="cat-5">
+                    <div class="cat-title">Kids</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=48" class="channel-card" data-search="a plus kids tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25709?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>A Plus Kids TV</span>
+                        </a>
+                                                <a href="player.php?id=50" class="channel-card" data-search="baby tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25711?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Baby TV</span>
+                        </a>
+                                                <a href="player.php?id=47" class="channel-card" data-search="cartoon network">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25707?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Cartoon Network</span>
+                        </a>
+                                                <a href="player.php?id=46" class="channel-card" data-search="cbeebies">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25706?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>CBeebies</span>
+                        </a>
+                                                <a href="player.php?id=45" class="channel-card" data-search="da vinci">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25705?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Da Vinci</span>
+                        </a>
+                                                <a href="player.php?id=51" class="channel-card" data-search="disney jr">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25712?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Disney Jr</span>
+                        </a>
+                                                <a href="player.php?id=53" class="channel-card" data-search="moonbug">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/101113?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Moonbug</span>
+                        </a>
+                                                <a href="player.php?id=52" class="channel-card" data-search="nick jr">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25713?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Nick Jr</span>
+                        </a>
+                                                <a href="player.php?id=49" class="channel-card" data-search="nickelodeon">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25710?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Nickelodeon</span>
+                        </a>
+                                                <a href="player.php?id=54" class="channel-card" data-search="pogo">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/47360?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Pogo</span>
+                        </a>
+                                            </div>
+                </section>
+                                            <section class="cat-section" id="cat-6">
+                    <div class="cat-title">Documentary</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=55" class="channel-card" data-search="animal planet">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25716?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Animal Planet</span>
+                        </a>
+                                                <a href="player.php?id=56" class="channel-card" data-search="discovery">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25717?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Discovery</span>
+                        </a>
+                                                <a href="player.php?id=57" class="channel-card" data-search="discovery science">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25718?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Discovery Science</span>
+                        </a>
+                                                <a href="player.php?id=128" class="channel-card" data-search="discovery turbo">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/47362?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Discovery Turbo</span>
+                        </a>
+                                                <a href="player.php?id=61" class="channel-card" data-search="history tv 18">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25720?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>History TV 18</span>
+                        </a>
+                                                <a href="player.php?id=60" class="channel-card" data-search="nat geo wild">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25715?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Nat Geo Wild</span>
+                        </a>
+                                                <a href="player.php?id=59" class="channel-card" data-search="national geographic">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25719?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>National Geographic</span>
+                        </a>
+                                                <a href="player.php?id=83" class="channel-card" data-search="sony bbc earth">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25742?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Sony BBC Earth</span>
+                        </a>
+                                                <a href="player.php?id=58" class="channel-card" data-search="tlc">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25194?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>TLC</span>
+                        </a>
+                                            </div>
+                </section>
+                                            <section class="cat-section" id="cat-7">
+                    <div class="cat-title">Religious</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=24" class="channel-card" data-search="damsathara tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25683?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Damsathara TV</span>
+                        </a>
+                                                <a href="player.php?id=28" class="channel-card" data-search="god tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25687?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>GOD TV</span>
+                        </a>
+                                                <a href="player.php?id=23" class="channel-card" data-search="pragna tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25682?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Pragna TV</span>
+                        </a>
+                                                <a href="player.php?id=27" class="channel-card" data-search="shraddha tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25686?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Shraddha TV</span>
+                        </a>
+                                                <a href="player.php?id=26" class="channel-card" data-search="the buddhist tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25685?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>The Buddhist TV</span>
+                        </a>
+                                                <a href="player.php?id=29" class="channel-card" data-search="verbum tv">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25688?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Verbum TV</span>
+                        </a>
+                                            </div>
+                </section>
+                                            <section class="cat-section" id="cat-8">
+                    <div class="cat-title">Music</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=40" class="channel-card" data-search="b4u music">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25700?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>B4U Music</span>
+                        </a>
+                                                <a href="player.php?id=19" class="channel-card" data-search="citi hitz">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25678?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Citi Hitz</span>
+                        </a>
+                                                <a href="player.php?id=41" class="channel-card" data-search="mtv 90s">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/161765?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>MTV 90s</span>
+                        </a>
+                                            </div>
+                </section>
+                                            <section class="cat-section" id="cat-9">
+                    <div class="cat-title">Education</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=102" class="channel-card" data-search="nenasa sinhala grade 1-5">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25760?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Nenasa Sinhala Grade 1-5</span>
+                        </a>
+                                                <a href="player.php?id=103" class="channel-card" data-search="nenasa sinhala grade 6-9">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25762?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Nenasa Sinhala Grade 6-9</span>
+                        </a>
+                                                <a href="player.php?id=105" class="channel-card" data-search="nenasa sinhala o/l">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25764?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Nenasa Sinhala O/L</span>
+                        </a>
+                                                <a href="player.php?id=104" class="channel-card" data-search="nenasa tamil grade 6-9">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25763?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Nenasa Tamil Grade 6-9</span>
+                        </a>
+                                                <a href="player.php?id=106" class="channel-card" data-search="nenasa tamil o/l">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25765?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Nenasa Tamil O/L</span>
+                        </a>
+                                            </div>
+                </section>
+                                            <section class="cat-section" id="cat-10">
+                    <div class="cat-title">International</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=31" class="channel-card" data-search="abc australia">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25690?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>ABC Australia</span>
+                        </a>
+                                                <a href="player.php?id=130" class="channel-card" data-search="dw">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25789?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>DW</span>
+                        </a>
+                                                <a href="player.php?id=134" class="channel-card" data-search="kbs korea">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25793?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>KBS Korea</span>
+                        </a>
+                                                <a href="player.php?id=132" class="channel-card" data-search="phoenix info news">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25791?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Phoenix Info News</span>
+                        </a>
+                                                <a href="player.php?id=131" class="channel-card" data-search="rai italia">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25790?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>RAI Italia</span>
+                        </a>
+                                                <a href="player.php?id=129" class="channel-card" data-search="trt world">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25787?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>TRT World</span>
+                        </a>
+                                                <a href="player.php?id=133" class="channel-card" data-search="tv5 monde asie">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25792?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>TV5 Monde Asie</span>
+                        </a>
+                                            </div>
+                </section>
+                                            <section class="cat-section" id="cat-11">
+                    <div class="cat-title">HD Channels</div>
+                    <div class="app-grid">
+                                                <a href="player.php?id=110" class="channel-card" data-search="animal planet hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25769?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Animal Planet HD</span>
+                        </a>
+                                                <a href="player.php?id=111" class="channel-card" data-search="axn hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25770?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>AXN HD</span>
+                        </a>
+                                                <a href="player.php?id=116" class="channel-card" data-search="cinemaworld hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25774?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>CinemaWorld HD</span>
+                        </a>
+                                                <a href="player.php?id=117" class="channel-card" data-search="cinemax hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25775?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Cinemax HD</span>
+                        </a>
+                                                <a href="player.php?id=109" class="channel-card" data-search="discovery hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25768?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Discovery HD</span>
+                        </a>
+                                                <a href="player.php?id=114" class="channel-card" data-search="hbo hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25772?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>HBO HD</span>
+                        </a>
+                                                <a href="player.php?id=118" class="channel-card" data-search="hbo hits hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25776?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>HBO Hits HD</span>
+                        </a>
+                                                <a href="player.php?id=113" class="channel-card" data-search="hits now hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25771?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>HITS NOW HD</span>
+                        </a>
+                                                <a href="player.php?id=125" class="channel-card" data-search="premier sports hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25783?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Premier Sports HD</span>
+                        </a>
+                                                <a href="player.php?id=112" class="channel-card" data-search="rock entertainment hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25794?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>ROCK Entertainment HD</span>
+                        </a>
+                                                <a href="player.php?id=123" class="channel-card" data-search="sony sports 2 hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25781?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Sony Sports 2 HD</span>
+                        </a>
+                                                <a href="player.php?id=124" class="channel-card" data-search="sony sports 5 hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25782?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Sony Sports 5 HD</span>
+                        </a>
+                                                <a href="player.php?id=115" class="channel-card" data-search="star movies hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25773?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Movies HD</span>
+                        </a>
+                                                <a href="player.php?id=119" class="channel-card" data-search="star movies select hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25777?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Movies Select HD</span>
+                        </a>
+                                                <a href="player.php?id=120" class="channel-card" data-search="star sports hd 1">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25778?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Sports HD 1</span>
+                        </a>
+                                                <a href="player.php?id=121" class="channel-card" data-search="star sports select 1 hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25779?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Sports Select 1 HD</span>
+                        </a>
+                                                <a href="player.php?id=122" class="channel-card" data-search="star sports select 2 hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25780?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>Star Sports Select 2 HD</span>
+                        </a>
+                                                <a href="player.php?id=126" class="channel-card" data-search="the papare tv 1 hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25784?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>The Papare TV 1 HD</span>
+                        </a>
+                                                <a href="player.php?id=127" class="channel-card" data-search="the papare tv 2 hd">
+                            <div class="icon-box"><img src="https://api3.viu.lk/api/client/v1/global/images/25785?accessKey=WkVjNWNscFhORDBLCg==" loading="lazy"></div>
+                            <span>The Papare TV 2 HD</span>
+                        </a>
+                                            </div>
+                </section>
+                    </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="#home" class="nav-item active" data-nav="home"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
+        <a href="#cat-1" class="nav-item" data-nav="cat-1"><i class="bi bi-tv-fill"></i><span>Local</span></a>
+        <a href="#cat-2" class="nav-item" data-nav="cat-2"><i class="bi bi-newspaper"></i><span>News</span></a>
+        <a href="#cat-3" class="nav-item" data-nav="cat-3"><i class="bi bi-controller"></i><span>Sports</span></a>
+    </nav>
+
+    <script>
+        let cur = 0;
+        const track = document.getElementById('track');
+        const slides = document.querySelectorAll('.slide');
+        if(slides.length > 0) {
+            setInterval(() => {
+                cur = (cur + 1) % slides.length;
+                track.style.transform = `translateX(-${cur * 100}%)`;
+            }, 5000);
+        }
+
+        const navLinks = document.querySelectorAll('.rail-link, .nav-item');
+        const sections = document.querySelectorAll('section, body');
+
+        window.addEventListener('scroll', () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        function search() {
+            let v = document.getElementById('q').value.toLowerCase();
+            document.querySelectorAll('.channel-card').forEach(c => {
+                c.style.display = c.dataset.search.includes(v) ? "block" : "none";
+            });
+            document.querySelectorAll('.cat-section').forEach(sec => {
+                const visible = Array.from(sec.querySelectorAll('.channel-card')).some(c => c.style.display !== 'none');
+                sec.style.display = visible ? "block" : "none";
+            });
+        }
+    </script>
+</body>
+</html>
