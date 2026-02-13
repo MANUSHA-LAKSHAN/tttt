@@ -860,46 +860,7 @@
         <a href="#cat-3" class="nav-item" data-nav="cat-3"><i class="bi bi-controller"></i><span>Sports</span></a>
     </nav>
 
-    <script>
-        let cur = 0;
-        const track = document.getElementById('track');
-        const slides = document.querySelectorAll('.slide');
-        if(slides.length > 0) {
-            setInterval(() => {
-                cur = (cur + 1) % slides.length;
-                track.style.transform = `translateX(-${cur * 100}%)`;
-            }, 5000);
-        }
-
-        const navLinks = document.querySelectorAll('.rail-link, .nav-item');
-        const sections = document.querySelectorAll('section, body');
-
-        window.addEventListener('scroll', () => {
-            let current = "";
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        function search() {
-            let v = document.getElementById('q').value.toLowerCase();
-            document.querySelectorAll('.channel-card').forEach(c => {
-                c.style.display = c.dataset.search.includes(v) ? "block" : "none";
-            });
-            document.querySelectorAll('.cat-section').forEach(sec => {
-                const visible = Array.from(sec.querySelectorAll('.channel-card')).some(c => c.style.display !== 'none');
-                sec.style.display = visible ? "block" : "none";
-            });
-        }
-    </script>
+    
 </body>
+
 </html>
